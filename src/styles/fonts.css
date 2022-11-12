@@ -1,0 +1,14 @@
+@font-face {
+  font-family: garetBook;
+  src: url(./fonts/Garet-Book.otf);
+}
+
+@font-face {
+  font-family: garetHeavy;
+  src: url(./fonts/Garet-Heavy.otf);
+}
+
+@font-face {
+  font-family: Blanka;
+  src: url(./fonts/Blanka-Regular.otf);
+}
