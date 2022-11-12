@@ -95,7 +95,7 @@ header {
   color: rgb(var(--secondary));
 }
 
-.nav__item:hover {
+.nav__item:hover, .nav__item:focus {
   border-radius: .375rem;
   box-shadow: 0 0 0 .2em rgba(var(--secondary), 0.7);
 }
