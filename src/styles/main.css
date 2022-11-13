@@ -23,6 +23,26 @@ body {
   font-size: 12px;
 }
 
+/* 
+ * skip-link
+ */
+.skip-link {
+  position: absolute;
+  top: -44px;
+  left: 0;
+  background-color: rgb(var(--secondary));
+  color: rgb(var(--primary));
+  padding: 14px;
+  z-index: 100;
+  height: 44px;
+  border-radius: .375rem;
+}
+ 
+.skip-link:focus {
+  top: 0;
+}
+
+
 /*
  * Header
  */
@@ -196,6 +216,33 @@ header {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+/* 
+ * Rating stars
+ */
+ .stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: FontAwesome;
+}
+
+.stars-outer::before {
+  content: "\2606 \2606 \2606 \2606 \2606";
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-inner::before {
+  content: "\2605 \2605 \2605 \2605 \2605";
+  color: #f8ce0b;
 }
 
 /*
