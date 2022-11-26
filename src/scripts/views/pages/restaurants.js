@@ -1,6 +1,6 @@
 import TheRestaurantDbSource from '../../data/therestaurantdb-source';
 import fillingStar from '../../utils/fill-star';
-import { createRestaurantItemTemplate } from '../templates/template-creator';
+import * as template from '../templates/template-creator';
 
 const Restaurants = {
   async render() {
@@ -15,7 +15,7 @@ const Restaurants = {
     const restaurants = await TheRestaurantDbSource.listRestaurants();
     const restaurantsContainer = document.querySelector('#restaurants');
     restaurants.forEach((restaurant, index) => {
-      restaurantsContainer.innerHTML += createRestaurantItemTemplate(restaurant);
+      restaurantsContainer.innerHTML += template.restaurantItem(restaurant);
       fillingStar(index, restaurant.rating);
     });
   },
