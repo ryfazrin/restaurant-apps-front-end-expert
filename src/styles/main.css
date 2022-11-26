@@ -202,8 +202,10 @@ header {
   padding: 24px;
 }
 
-.headline__title {
+.headline__title a {
   font-family: garetHeavy, "Roboto";
+  color: rgb(var(--primary));
+  text-decoration: none;
   padding-block: 8px;
 }
 
