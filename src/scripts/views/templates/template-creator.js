@@ -80,12 +80,12 @@ const likedButton = () => `
   </button>
 `;
 
-export { 
+export {
   restaurantItem,
   restaurantDetail,
   restaurantFoodDetail,
   restaurantDrinkDetail,
   restaurantCustomerReviewsDetail,
   likeButton,
-  likedButton
+  likedButton,
 };
