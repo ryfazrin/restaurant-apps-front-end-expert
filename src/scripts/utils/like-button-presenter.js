@@ -1,8 +1,7 @@
-// import FavoriterestaurantDb from '../data/favorite-restaurant-idb';
-import FavoriteRestaurantDb from '../data/favorite-movie-idb';
+import FavoriteRestaurantDb from '../data/favorite-restaurant-idb';
 import * as template from '../views/templates/template-creator';
 
-const LikeButtonInitiator = {
+const LikeButtonPresenter = {
   async init({ likeButtonContainer, restaurant }) {
     this._likeButtonContainer = likeButtonContainer;
     this._restaurant = restaurant;
@@ -46,4 +45,4 @@ const LikeButtonInitiator = {
   },
 };
 
-export default LikeButtonInitiator;
+export default LikeButtonPresenter;
