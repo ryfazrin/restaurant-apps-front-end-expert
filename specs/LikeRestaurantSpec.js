@@ -1,3 +1,4 @@
+import FavoriteRestaurantDb from '../src/scripts/data/favorite-movie-idb';
 import LikeButtonInitiator from '../src/scripts/utils/like-button-initiator';
 
 describe('Liking a Restaurant', () => {
@@ -31,5 +32,38 @@ describe('Liking a Restaurant', () => {
 
     expect(document.querySelector('[aria-label="unlike this restaurant"]'))
       .toBeFalsy();
+  });
+
+  it('should be able to like te restaurant', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant: {
+        id: 1,
+      },
+    });
+
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+    const restaurant = await FavoriteRestaurantDb.getRestaurant(1);
+
+    expect(restaurant).toEqual({ id: 1 });
+
+    FavoriteRestaurantDb.deleteRestaurant(1);
+  });
+
+  it('should not add a restaurant again when its already liked', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant: {
+        id: 1,
+      },
+    });
+
+    await FavoriteRestaurantDb.putRestaurant({ id: 1 });
+
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+
+    expect(await FavoriteRestaurantDb.getAllRestaurants()).toEqual([{ id: 1 }]);
+
+    FavoriteRestaurantDb.deleteRestaurant(1);
   });
 });
