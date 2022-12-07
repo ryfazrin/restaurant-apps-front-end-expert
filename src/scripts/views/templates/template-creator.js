@@ -18,7 +18,7 @@ const restaurantItem = (restaurant) => `
       </h1>
       <p class="headline__description">${restaurant.description}</p>
     </div>
-  <article>
+  </article>
 `;
 
 const restaurantDetail = (restaurant) => `
