@@ -8,7 +8,7 @@ const Restaurants = {
     <section class="hero">
       <picture>
         <source media="(max-width: 600px)" srcset="./images/hero-small.jpg">
-        <img src='./images/hero-large.jpg' 
+        <img class="lazyload" data-src='./images/hero-large.jpg' 
              alt="restaurant poster">
       </picture>
     </section>
