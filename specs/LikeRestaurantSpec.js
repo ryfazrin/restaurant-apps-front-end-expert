@@ -66,4 +66,15 @@ describe('Liking a Restaurant', () => {
 
     FavoriteRestaurantDb.deleteRestaurant(1);
   });
+
+  it('should not add a restaurant when it has no id', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant: {},
+    });
+
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+
+    expect(await FavoriteRestaurantDb.getAllRestaurants()).toEqual([]);
+  });
 });
