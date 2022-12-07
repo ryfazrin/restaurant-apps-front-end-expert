@@ -20,8 +20,8 @@ class FavoriteRestaurantView {
     } else {
       html = this._getEmptyRestaurantTemplate();
     }
-
     document.getElementById('restaurants').innerHTML = html;
+
     document.getElementById('restaurants').dispatchEvent(new Event('restaurants:updated'));
   }
 
