@@ -1,4 +1,4 @@
-import FavoriteRestaurantDb from '../../data/favorite-movie-idb';
+import FavoriteRestaurantDb from '../../data/favorite-restaurant-idb';
 import fillingStar from '../../utils/fill-star';
 import * as template from '../templates/template-creator';
 
