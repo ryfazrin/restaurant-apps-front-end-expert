@@ -1,6 +1,5 @@
 import FavoriteRestaurantDb from '../../data/favorite-restaurant-idb';
-import fillingStar from '../../utils/fill-star';
-import { restaurantItem } from '../templates/template-creator';
+import FavoriteRestaurantShowPresenter from './liked-restaurant/favorite-restaurant-show-presenter';
 import FavoriteRestaurantView from './liked-restaurant/favorite-restaurant-view';
 
 const view = new FavoriteRestaurantView();
@@ -11,12 +10,7 @@ const Like = {
   },
 
   async afterRender() {
-    const restaurants = await FavoriteRestaurantDb.getAllRestaurants();
-    const restaurantsContainer = document.querySelector('#restaurants');
-    restaurants.forEach((restaurant, index) => {
-      restaurantsContainer.innerHTML += restaurantItem(restaurant);
-      fillingStar(index, restaurant.rating);
-    });
+    new FavoriteRestaurantShowPresenter({ view, favoriteRestaurants: FavoriteRestaurantDb });
   },
 };
 

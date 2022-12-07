@@ -1,3 +1,4 @@
+import fillingStar from '../../../utils/fill-star';
 import { restaurantItem } from '../../templates/template-creator';
 
 class FavoriteRestaurantView {
@@ -20,13 +21,24 @@ class FavoriteRestaurantView {
     } else {
       html = this._getEmptyRestaurantTemplate();
     }
+
     document.getElementById('restaurants').innerHTML = html;
+
+    if (restaurants.length) {
+      this._addStarStyle(restaurants);
+    }
 
     document.getElementById('restaurants').dispatchEvent(new Event('restaurants:updated'));
   }
 
   _getEmptyRestaurantTemplate() {
     return '<div class="restaurant-item__not__found">Tidak ada restoran untuk ditampilkan</div>';
+  }
+
+  _addStarStyle(restaurants) {
+    restaurants.forEach((restaurant, index) => {
+      fillingStar(index, restaurant.rating);
+    });
   }
 }
 
