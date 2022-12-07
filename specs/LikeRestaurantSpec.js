@@ -9,7 +9,7 @@ describe('Liking a Restaurant', () => {
     addLikeButtonContainer();
   });
 
-  it('should show the like button when the movie has not been liked before', async () => {
+  it('should show the like button when the restaurant has not been liked before', async () => {
     await LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant: {
@@ -19,5 +19,17 @@ describe('Liking a Restaurant', () => {
 
     expect(document.querySelector('[aria-label="like this restaurant"]'))
       .toBeTruthy();
+  });
+
+  it('should not show the like button when the restaurant has not been liked before', async () => {
+    await LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant: {
+        id: 1,
+      },
+    });
+
+    expect(document.querySelector('[aria-label="unlike this restaurant"]'))
+      .toBeFalsy();
   });
 });
