@@ -1,6 +1,6 @@
 import FavoriteRestaurantDb from '../../data/favorite-restaurant-idb';
 import fillingStar from '../../utils/fill-star';
-import * as template from '../templates/template-creator';
+import { restaurantItem } from '../templates/template-creator';
 
 const Like = {
   async render() {
@@ -14,7 +14,7 @@ const Like = {
     const restaurants = await FavoriteRestaurantDb.getAllRestaurants();
     const restaurantsContainer = document.querySelector('#restaurants');
     restaurants.forEach((restaurant, index) => {
-      restaurantsContainer.innerHTML += template.restaurantItem(restaurant);
+      restaurantsContainer.innerHTML += restaurantItem(restaurant);
       fillingStar(index, restaurant.rating);
     });
   },
