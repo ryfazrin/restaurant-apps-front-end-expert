@@ -127,12 +127,14 @@ header {
 .hero {
   display: flex;
   align-items: center;
-  min-height: 380px;
-  width: 100%;
   text-align: center;
-  background-image: url("./images/hero.jpg");
   background-position: center;
   background-color: rgb(var(--primary));
+}
+
+.hero picture, .hero img {
+  width: 100%;
+  object-fit: contain;
 }
 
 /* 

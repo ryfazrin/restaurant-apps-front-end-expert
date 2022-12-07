@@ -1,5 +1,7 @@
 // Scripts
 import 'regenerator-runtime'; /* for async await transpile */
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 // Styles
 import '../styles/fonts.css';
 import '../styles/main.css';
