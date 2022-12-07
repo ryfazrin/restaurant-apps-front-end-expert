@@ -1,4 +1,4 @@
-import FavoriteRestaurantDb from '../src/scripts/data/favorite-movie-idb';
+import FavoriteRestaurantDb from '../src/scripts/data/favorite-restaurant-idb';
 import LikeButtonInitiator from '../src/scripts/utils/like-button-initiator';
 
 describe('Liking a Restaurant', () => {
