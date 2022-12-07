@@ -14,18 +14,13 @@ class FavoriteRestaurantView {
   }
 
   showFavoriteRestaurants(restaurants = []) {
-    let html;
+    const html = document.getElementById('restaurants');
 
     if (restaurants.length) {
-      html = restaurants.reduce((carry, restaurant) => carry.concat(restaurantItem(restaurant)), '');
-    } else {
-      html = this._getEmptyRestaurantTemplate();
-    }
-
-    document.getElementById('restaurants').innerHTML = html;
-
-    if (restaurants.length) {
+      html.innerHTML = restaurants.reduce((carry, restaurant) => carry.concat(restaurantItem(restaurant)), '');
       this._addStarStyle(restaurants);
+    } else {
+      html.innerHTML = this._getEmptyRestaurantTemplate();
     }
 
     document.getElementById('restaurants').dispatchEvent(new Event('restaurants:updated'));
