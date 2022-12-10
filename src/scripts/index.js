@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     restaurantItem.classList.add("headline");
     restaurantItem.innerHTML = `
     <figure class="headline__figure">
-      <img src="${restaurant.pictureId}" alt="Dicoding Fact Sheet">
+      <img src="${restaurant.pictureId}" alt="${restaurant.name}">
       <figcaption>${restaurant.city}</figcaption>
     </figure>
     <div class="headline__content">
