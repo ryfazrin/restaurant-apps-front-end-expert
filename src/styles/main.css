@@ -130,7 +130,7 @@ header {
   min-height: 380px;
   width: 100%;
   text-align: center;
-  background-image: url("./images/hero.jpg");
+  background-image: url("./images/hero.webp");
   background-position: center;
   background-color: rgb(var(--primary));
 }
