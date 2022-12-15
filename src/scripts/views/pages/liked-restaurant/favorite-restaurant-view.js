@@ -10,7 +10,7 @@ class FavoriteRestaurantView {
   }
 
   showRestaurants(restaurant) {
-    this.showFavoriteMovies(restaurant);
+    this.showFavoriteRestaurants(restaurant);
   }
 
   showFavoriteRestaurants(restaurants = []) {
